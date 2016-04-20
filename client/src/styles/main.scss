@@ -1,0 +1,73 @@
+$dark: #2C3E50;
+$light: #ECF0F1;
+$medium1: #3498DB;
+$medium2: #2980B9;
+$accent: #E74C3C;
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+}
+
+.game-board {
+	$border: 1px solid $light;
+	color: $dark;
+	padding: 20px;
+
+	&.win{
+		background: $accent;
+	}
+
+
+	ul {
+		box-sizing: border-box;
+		border-left: $border;
+    	border-top: $border;
+		display: flex;
+		flex: 0 1 auto;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+
+		&.heading {
+			font-weight: bold;
+		}
+
+		.win &{
+			border-color: $accent;
+		}
+	}
+
+	li {
+		box-sizing: border-box;
+		border-right: $border;
+    	border-bottom: $border;
+    	display: table;
+		flex: 1 0 20%;
+		list-style: none;
+		margin: 0;
+		min-height: 16vh;
+		padding: 5px;
+		text-align: center;
+		width: 20%;
+
+		&.covered{
+			background: $light;
+		}
+
+		div{
+			display: table-cell;
+			vertical-align: middle;
+			word-break: break-word;
+		}
+	}
+
+	.heading li {
+		min-height: 0;
+		background: $dark;
+		color: $light;
+		padding: 10px 0;
+	}
+}
