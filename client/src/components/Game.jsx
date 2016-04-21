@@ -38,8 +38,8 @@ export const Game = React.createClass({
 				<li>E</li>
 			</ul>
 			<ul className="game">
-				{this.getWords().map((word, index) =>
-					<Space key={word} word={word} space={25 - index} {...this.props} />
+				{this.getWords().map((word, index, wordList) =>
+					<Space key={word} word={word} space={wordList.length - index} {...this.props} />
 				)}
 			</ul>
 		</div>;
