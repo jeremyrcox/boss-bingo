@@ -14,24 +14,24 @@ import {expect} from 'chai';
 
 describe('Space', () => {
 
-    it('Renders a list item with the provided word ', () => {
-        const component = renderIntoDocument(<Space word="test" />);
-        const space = scryRenderedDOMComponentsWithTag(component, 'li');
+  it('Renders a list item with the provided word ', () => {
+    const component = renderIntoDocument(<Space word="test" />);
+    const space = scryRenderedDOMComponentsWithTag(component, 'li');
 
-        expect(space[0].textContent).to.equal('test');
-    });
+    expect(space[0].textContent).to.equal('test');
+  });
 
-    it('Responds to a click event with the index of the space', () => {
-        let clickedSpace;
-        const toggleSpace = (space) => {
-            clickedSpace = parseInt(space, 10);
-        };
+  it('Responds to a click event with the index of the space', () => {
+    let clickedSpace;
+    const toggleSpace = (space) => {
+      clickedSpace = parseInt(space, 10);
+    };
 
-        const component = renderIntoDocument(<Space toggleSpace={toggleSpace} space="1" word="test" />);
-        const space = scryRenderedDOMComponentsWithTag(component, 'li');
-        Simulate.click(space[0]);
+    const component = renderIntoDocument(<Space toggleSpace={toggleSpace} space="1" word="test" />);
+    const space = scryRenderedDOMComponentsWithTag(component, 'li');
+    Simulate.click(space[0]);
 
-        expect(clickedSpace).to.equal(1);
-    });
+    expect(clickedSpace).to.equal(1);
+  });
 
 });

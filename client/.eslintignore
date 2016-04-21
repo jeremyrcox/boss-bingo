@@ -1,0 +1,3 @@
+**/bundle-*.js
+**/*.scss
+node_modules/*

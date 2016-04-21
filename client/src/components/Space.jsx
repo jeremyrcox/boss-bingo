@@ -1,16 +1,18 @@
 import React from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-export const Space = React.createClass({
-	mixins: [PureRenderMixin],
 
-	isCovered: function(){
-		return !!(this.props.score & (1 << this.props.space));
-	},
+export function Space(props) {
+  const isCovered = !!(props.score & (1 << props.space));
 
-	render: function(){
-		return <li onClick={() => this.props.toggleSpace(this.props.space)} className={this.isCovered() ? 'covered' : ''}>
-			<div>{this.props.word}</div>
-		</li>;
-	}
-});
+  return (
+    <li onClick={() => props.toggleSpace(props.space)} className={isCovered ? 'covered' : ''}>
+      <div>{props.word}</div>
+    </li>
+  );
+}
+
+Space.propTypes = {
+  space: React.PropTypes.number.isRequired,
+  toggleSpace: React.PropTypes.func.isRequired,
+  word: React.PropTypes.string.isRequired,
+};
