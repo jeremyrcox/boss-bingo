@@ -60,7 +60,7 @@ export class Game extends React.Component {
 }
 
 Game.propTypes = {
-  words: React.PropTypes.array.isRequired,
+  words: React.PropTypes.object.isRequired,
   score: React.PropTypes.number.isRequired,
 };
 
