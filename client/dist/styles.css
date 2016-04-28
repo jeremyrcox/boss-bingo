@@ -5,8 +5,6 @@ body {
 .game-board {
   color: #2C3E50;
   padding: 20px; }
-  .game-board.win {
-    background: #E74C3C; }
   .game-board ul {
     box-sizing: border-box;
     border-left: 1px solid #ECF0F1;
@@ -20,12 +18,11 @@ body {
     width: 100%; }
     .game-board ul.heading {
       font-weight: bold; }
-    .win .game-board ul {
-      border-color: #E74C3C; }
   .game-board li {
     box-sizing: border-box;
     border-right: 1px solid #ECF0F1;
     border-bottom: 1px solid #ECF0F1;
+    cursor: pointer;
     display: table;
     flex: 1 0 20%;
     list-style: none;
@@ -40,8 +37,13 @@ body {
       display: table-cell;
       vertical-align: middle;
       word-break: break-word; }
+    .game-board li.win {
+      background-color: #E74C3C;
+      color: #fff;
+      font-weight: bold; }
   .game-board .heading li {
     min-height: 0;
     background: #2C3E50;
     color: #ECF0F1;
-    padding: 10px 0; }
+    cursor: default;
+    padding: 15px 0; }

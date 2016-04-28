@@ -36,7 +36,7 @@ export class Game extends React.Component {
       2236960,
     ];
 
-    return winPatterns.some(pattern => (pattern & this.props.score) === pattern);
+    return winPatterns.find(pattern => (pattern & this.props.score) === pattern) || 0;
   }
 
   render() {
@@ -51,7 +51,7 @@ export class Game extends React.Component {
         </ul>
         <ul className="game">
           {this.getWords().map((word, index) =>
-            <Space key={word} word={word} space={25 - index} {...this.props} />
+            <Space key={word} word={word} space={25 - index} win={this.isWinning()} {...this.props} />
           )}
         </ul>
       </div>

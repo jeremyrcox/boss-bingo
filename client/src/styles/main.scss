@@ -14,10 +14,6 @@ body {
 	color: $dark;
 	padding: 20px;
 
-	&.win{
-		background: $accent;
-	}
-
 
 	ul {
 		box-sizing: border-box;
@@ -34,16 +30,13 @@ body {
 		&.heading {
 			font-weight: bold;
 		}
-
-		.win &{
-			border-color: $accent;
-		}
 	}
 
 	li {
 		box-sizing: border-box;
 		border-right: $border;
     	border-bottom: $border;
+    	cursor: pointer;
     	display: table;
 		flex: 1 0 20%;
 		list-style: none;
@@ -62,12 +55,19 @@ body {
 			vertical-align: middle;
 			word-break: break-word;
 		}
+
+		&.win {
+			background-color: $accent;
+			color: #fff;
+			font-weight: bold;
+		}
 	}
 
 	.heading li {
 		min-height: 0;
 		background: $dark;
 		color: $light;
-		padding: 10px 0;
+		cursor: default;
+		padding: 15px 0;
 	}
 }
