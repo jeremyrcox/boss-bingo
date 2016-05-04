@@ -1,9 +1,0 @@
-{
-    "ignore": [
-        "**/node_modules/**"
-    ],
-    "test": [
-        "**/test/**"
-    ],
-    "packageJsonLocation": "client/package.json"
-}
