@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test-helper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch",
     "build-css": "node-sass --include-path src/styles src/styles/main.scss dist/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "lint": "eslint --ext .js,.jsx src/** -c ../.eslintrc --ignore-path ../.eslintignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremyrcox/boss-bingo"
   },
   "keywords": [],
   "author": "Jeremy Cox",
@@ -41,6 +46,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
+    "express": "^4.13.4",
     "immutable": "^3.7.6",
     "react": "^0.14.7",
     "react-addons-pure-render-mixin": "^0.14.7",

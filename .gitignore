@@ -33,3 +33,6 @@ node_modules
 .node_repl_history
 
 *.sublime-*
+
+# This should be provided by the end user
+words.json
