@@ -6,12 +6,12 @@ export function Space(props) {
   const isWin = !!(props.win & (1 << props.space));
 
   let cssClass = '';
-  
-  if(isCovered){
-    cssClass += 'covered';
-  }  
 
-  if(isWin){
+  if (isCovered) {
+    cssClass += 'covered';
+  }
+
+  if (isWin) {
     cssClass += ' win';
   }
 
@@ -25,5 +25,5 @@ export function Space(props) {
 Space.propTypes = {
   space: React.PropTypes.number.isRequired,
   toggleSpace: React.PropTypes.func.isRequired,
-  word: React.PropTypes.string.isRequired,
+  word: React.PropTypes.string.isRequired
 };

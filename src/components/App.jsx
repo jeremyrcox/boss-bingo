@@ -5,5 +5,5 @@ export function App(props) {
 }
 
 App.propTypes = {
-  children: React.PropTypes.object.isRequired,
+  children: React.PropTypes.object.isRequired
 };

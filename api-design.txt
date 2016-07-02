@@ -1,35 +1,10 @@
-Initial state:
-	{
-		"words": [
-			"word1", "word2", "word3", ...
-		],
-		"players": [
-			{
-				"id" : 789,
-				"name": "Bob",
-				"score": 65546, //"00000 00010 00000 00000 01010"
-				"self": true,
-			},
-			{
-				"id" : 123,
-				"name": "Bill",
-				"score": 5,
-			}, 
-			{
-				"id" : 456,
-				"name": "Jane",
-				"score": 7,
-			}
-		]
-	}
-
-During play:
-	{
-		"words": [
-			"word1", "word2", "word3", ...
-		],
-		"covered": "0010011000101010101000001" //bit field, left to right, top to bottom
-	}
+state: {
+	title: '' // 5 char string
+	words: [], // Array of 25 words
+	score: 0, // Integer (decimal) of bitfield (binary) representing covered squares (see below)
+	fetchingWords: false,
+	
+}
 
 http://www.catonmat.net/blog/low-level-bit-hacks-you-absolutely-must-know/
 (dec >>> 0).toString(2);

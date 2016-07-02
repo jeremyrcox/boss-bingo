@@ -1,6 +1,9 @@
 {
   "extends": "airbnb",
   "rules": {
-    "no-multiple-empty-lines": [2, {"max": 2, "maxEOF": 2}]
+    "no-multiple-empty-lines": [2, {"max": 2, "maxEOF": 2}],
+    "max-len": 0,
+    "new-cap": [1, {"capIsNew": false}],
+    "comma-dangle": ["error", "never"]
   }
 }

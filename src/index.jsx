@@ -1,23 +1,36 @@
+import 'babel-polyfill';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
-import { createStore } from 'redux';
+import { compose, createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
 import { Map } from 'immutable';
 
-import words from './words';
+import { fetchWordsIfNeeded } from './fetch-words';
 import reducer from './reducer';
 import App from './components/App';
 import { GameContainer } from './components/Game';
 
 const initialState = Map({
-  words: words(),
-  score: 0,
+  title: 'POORE',
+  score: 0
 });
 
-const store = (
-    window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore
-  )(reducer, initialState);
+// const store = (
+//     window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore
+//   )(reducer, initialState);
+
+const store = createStore(reducer, initialState, compose(
+  applyMiddleware(thunkMiddleware),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+));
+
+store.dispatch(fetchWordsIfNeeded()).then(() =>
+  console.log(store.getState()) // eslint-disable-line no-console
+  // dispatch('SET_STATE', store.getState());
+);
 
 const routes = (
   <Route component={App}>
