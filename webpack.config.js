@@ -45,6 +45,8 @@ module.exports = {
           },
           comments: false,
           sourceMap: false
-      })
+      }),
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new webpack.optimize.DedupePlugin()
     ]
 };
