@@ -9,7 +9,8 @@
     "test:watch": "npm run test -- --watch",
     "build-css": "node-sass --include-path src/styles src/styles/main.scss dist/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-    "lint": "eslint --ext .js,.jsx src/** -c ../.eslintrc --ignore-path ../.eslintignore"
+    "lint": "eslint --ext .js,.jsx src/** -c ../.eslintrc --ignore-path ../.eslintignore",
+    "postinstall": "npm run build-css && node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
