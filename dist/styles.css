@@ -35,8 +35,16 @@ body {
       background: #ECF0F1; }
     .game-board li div {
       display: table-cell;
+      font-size: 24px;
       vertical-align: middle;
-      word-break: break-word; }
+      word-break: break-word;
+      font-size: 1.5rem; }
+      @media (min-width: 426px) {
+        .game-board li div {
+          font-size: 1.25rem; } }
+      @media (min-width: 769px) {
+        .game-board li div {
+          font-size: 1rem; } }
     .game-board li.win {
       background-color: #E74C3C;
       color: #fff;
