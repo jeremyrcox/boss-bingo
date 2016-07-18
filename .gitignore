@@ -31,8 +31,9 @@ node_modules
 
 *.sublime-*
 
-# Webpack Bundle
+# Generated files
 dist/bundle.js
+dist/styles.css
 
 # This should be provided by the end user
 words.json
