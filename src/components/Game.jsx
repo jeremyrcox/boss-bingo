@@ -2,6 +2,7 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
 
+import { Heading } from './Heading';
 import { Space } from './Space';
 import * as actionCreators from '../action-creators';
 
@@ -55,17 +56,15 @@ export class Game extends React.Component {
     }
 
     return (
-      <div className={`game-board ${this.isWinning() ? 'win' : ''}`}>
-        <ul className="heading">
-          {this.getTitle().split('').map((letter, index) =>
-            <li key={index}>{letter}</li>
-          )}
-        </ul>
-        <ul className="game">
-          {this.getWords().map((word, index) =>
-            <Space key={word} word={word} space={25 - index} win={this.isWinning()} {...this.props} />
-          )}
-        </ul>
+      <div>
+        <Heading />
+        <div className={`game-board ${this.isWinning() ? 'win' : ''}`}>
+          <ul className="game">
+            {this.getWords().map((word, index) =>
+              <Space key={word} word={word} space={25 - index} win={this.isWinning()} {...this.props} />
+            )}
+          </ul>
+        </div>
       </div>
     );
   }
@@ -82,7 +81,6 @@ function mapStateToProps(state) {
   return {
     words: state.get('words'),
     score: state.get('score'),
-    title: state.get('title'),
     isFetchingWords: state.get('isFetchingWords')
   };
 }
