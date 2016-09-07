@@ -57,7 +57,7 @@ export class Game extends React.Component {
 
     return (
       <div>
-        <Heading />
+        <Heading title={this.getTitle()} />
         <div className={`game-board ${this.isWinning() ? 'win' : ''}`}>
           <ul className="game">
             {this.getWords().map((word, index) =>
@@ -81,6 +81,7 @@ function mapStateToProps(state) {
   return {
     words: state.get('words'),
     score: state.get('score'),
+    title: state.get('title'),
     isFetchingWords: state.get('isFetchingWords')
   };
 }
