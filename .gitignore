@@ -31,6 +31,8 @@ node_modules
 
 *.sublime-*
 
+.idea
+
 # Generated files
 dist/bundle.js
 dist/styles.css

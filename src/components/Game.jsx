@@ -55,17 +55,15 @@ export class Game extends React.Component {
     }
 
     return (
-      <div className={`game-board ${this.isWinning() ? 'win' : ''}`}>
-        <ul className="heading">
-          {this.getTitle().split('').map((letter, index) =>
-            <li key={index}>{letter}</li>
-          )}
-        </ul>
-        <ul className="game">
-          {this.getWords().map((word, index) =>
-            <Space key={word} word={word} space={25 - index} win={this.isWinning()} {...this.props} />
-          )}
-        </ul>
+      <div>
+        <div className="heading">{this.getTitle()}</div>
+        <div className={`game-board ${this.isWinning() ? 'win' : ''}`}>
+          <ul className="game">
+            {this.getWords().map((word, index) =>
+              <Space key={word} word={word} space={25 - index} win={this.isWinning()} {...this.props} />
+            )}
+          </ul>
+        </div>
       </div>
     );
   }

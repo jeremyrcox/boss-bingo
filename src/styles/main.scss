@@ -72,12 +72,10 @@ body {
 			font-weight: bold;
 		}
 	}
+}
 
-	.heading li {
-		min-height: 0;
-		background: $dark;
-		color: $light;
-		cursor: default;
-		padding: 15px 0;
-	}
+.heading {
+  background: $dark;
+  color: $light;
+  padding: 15px;
 }

@@ -14,7 +14,7 @@ import App from './components/App';
 import { GameContainer } from './components/Game';
 
 const initialState = Map({
-  title: 'POORE',
+  title: 'Poore Bingo',
   score: 0
 });
 
