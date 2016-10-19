@@ -11,7 +11,7 @@ body {
 
 .game-board {
 	$border: 1px solid $light;
-	color: $dark;
+	color: $medium2;
 	padding: 20px;
 
 
@@ -48,6 +48,7 @@ body {
 
 		&.covered{
 			background: $light;
+			color: $accent;
 		}
 
 		div{
@@ -67,7 +68,7 @@ body {
 		}
 
 		&.win {
-			background-color: $accent;
+			background-color: $medium2;
 			color: #fff;
 			font-weight: bold;
 		}
@@ -75,7 +76,9 @@ body {
 }
 
 .heading {
-  background: $dark;
-  color: $light;
-  padding: 15px;
+	background: $light;
+	border-bottom: 4px solid;
+	color: $accent;
+	margin: 0;
+	padding: 15px;
 }

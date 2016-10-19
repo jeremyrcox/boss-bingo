@@ -2,6 +2,7 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
 
+import { Heading } from './Heading';
 import { Space } from './Space';
 import * as actionCreators from '../action-creators';
 
@@ -56,7 +57,7 @@ export class Game extends React.Component {
 
     return (
       <div>
-        <div className="heading">{this.getTitle()}</div>
+        <Heading title={this.getTitle()} />
         <div className={`game-board ${this.isWinning() ? 'win' : ''}`}>
           <ul className="game">
             {this.getWords().map((word, index) =>
