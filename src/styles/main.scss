@@ -5,80 +5,80 @@ $medium2: #2980B9;
 $accent: #E74C3C;
 
 body {
-	font-family: sans-serif;
-	margin: 0;
+  font-family: sans-serif;
+  margin: 0;
 }
 
 .game-board {
-	$border: 1px solid $light;
-	color: $medium2;
-	padding: 20px;
+  $border: 1px solid $light;
+  color: $medium2;
+  padding: 20px;
 
+  ul {
+    box-sizing: border-box;
+    border-left: $border;
+    border-top: $border;
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 
-	ul {
-		box-sizing: border-box;
-		border-left: $border;
-    	border-top: $border;
-		display: flex;
-		flex: 0 1 auto;
-		flex-flow: row wrap;
-		justify-content: space-around;
-		margin: 0;
-		padding: 0;
-		width: 100%;
+    &.heading {
+      font-weight: bold;
+    }
+  }
 
-		&.heading {
-			font-weight: bold;
-		}
-	}
+  li {
+    box-sizing: border-box;
+    border-right: $border;
+    border-bottom: $border;
+    cursor: pointer;
+    flex: 1 0 20%;
+    list-style: none;
+    margin: 0;
+    min-height: 16vh;
+    padding: 5px;
+    text-align: center;
+    width: 20%;
 
-	li {
-		box-sizing: border-box;
-		border-right: $border;
-    	border-bottom: $border;
-    	cursor: pointer;
-    	display: table;
-		flex: 1 0 20%;
-		list-style: none;
-		margin: 0;
-		min-height: 16vh;
-		padding: 5px;
-		text-align: center;
-		width: 20%;
+    &.covered {
+      background: $light;
+      color: $accent;
+    }
 
-		&.covered{
-			background: $light;
-			color: $accent;
-		}
+    div {
+      font-size: 1.5rem;
+      position: relative;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      vertical-align: middle;
+      word-break: break-word;
 
-		div{
-			display: table-cell;
-			font-size: 24px;
-			vertical-align: middle;
-			word-break: break-word;
-			font-size: 1.5rem;
+      @media(min-width: 426px) {
+        font-size: 1.25rem;
+      }
 
-			@media(min-width: 426px) {
-				font-size: 1.25rem;
-			}
+      @media(min-width: 769px) {
+        font-size: 1rem;
+      }
+    }
 
-			@media(min-width: 769px) {
-				font-size: 1rem;
-			}
-		}
-
-		&.win {
-			background-color: $medium2;
-			color: #fff;
-			font-weight: bold;
-		}
-	}
+    &.win {
+      background-color: $medium2;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
 }
 
 .heading {
-	background: $light;
-	border-bottom: 4px solid;
-	color: $accent;
-	margin: 0;
-	padding: 15px;
+  background: $light;
+  border-bottom: 4px solid;
+  color: $accent;
+  margin: 0;
+  padding: 15px;
 }
