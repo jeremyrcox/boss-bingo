@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')/
+        title #{title}
+
+        if hasAnalytics
+            script
+                include analytics.js
+
+        link(rel='stylesheet' type='text/css' href='styles.css')/
+    body
+        div#app
+        script(src='bundle.js')

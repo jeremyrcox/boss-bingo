@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack && node server/server.js",
+    "start": "node server/server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test-helper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch",
+    "build": "npm run build-css && npm run build-index",
+    "build-index": "cd ./src/templates && node buildIndex",
     "build-css": "node-sass --include-path src/styles src/styles/main.scss dist/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "lint": "eslint --ext .js,.jsx src/** -c ../.eslintrc --ignore-path ../.eslintignore",
-    "postinstall": "npm run build-css && node_modules/.bin/webpack"
+    "postinstall": "npm run build && node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
@@ -54,6 +56,7 @@
     "express": "^4.14.0",
     "immutable": "^3.7.6",
     "isomorphic-fetch": "^2.2.1",
+    "pug": "^2.0.0-beta6",
     "react": "^15.2.1",
     "react-addons-pure-render-mixin": "^15.2.1",
     "react-dom": "^15.2.1",
