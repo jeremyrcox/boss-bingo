@@ -14,13 +14,9 @@ import App from './components/App';
 import { GameContainer } from './components/Game';
 
 const initialState = Map({
-  title: 'Poore Bingo',
+  title: 'Boss Bingo',
   score: 0
 });
-
-// const store = (
-//     window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore
-//   )(reducer, initialState);
 
 const store = createStore(reducer, initialState, compose(
   applyMiddleware(thunkMiddleware),
@@ -29,7 +25,6 @@ const store = createStore(reducer, initialState, compose(
 
 store.dispatch(fetchWordsIfNeeded()).then(() =>
   console.log(store.getState()) // eslint-disable-line no-console
-  // dispatch('SET_STATE', store.getState());
 );
 
 const routes = (
