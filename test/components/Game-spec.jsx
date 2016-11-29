@@ -31,13 +31,13 @@ describe('Game', () => {
     const component = renderIntoDocument(<Game {...testProps}/>);
     const spaces = scryRenderedDOMComponentsWithTag(component, 'li');
 
-    expect(spaces.length).to.equal(8); //five <li> for header plus one for each word
-    expect(spaces[5].textContent).to.equal('omnichannel');
-    expect(spaces[6].textContent).to.equal('epicenter');
-    expect(spaces[7].textContent).to.equal('portfolio rationalization');
+    expect(spaces.length).to.equal(3);
+    expect(spaces[0].textContent).to.equal('omnichannel');
+    expect(spaces[1].textContent).to.equal('epicenter');
+    expect(spaces[2].textContent).to.equal('portfolio rationalization');
   });
 
-  it('handles click events on child <Space> elements', () => {
+  it('handles click events on child <Space> elements', function(){
     let clickedSpace;
     testProps.toggleSpace = (space) => {
       clickedSpace = parseInt(space, 10);
@@ -46,7 +46,7 @@ describe('Game', () => {
     const component = renderIntoDocument(<Game {...testProps}/>);
     const spaces = scryRenderedDOMComponentsWithTag(component, 'li');
 
-    Simulate.click(spaces[5]);
+    Simulate.click(spaces[0]);
 
     expect(clickedSpace).to.equal(25);
   });
