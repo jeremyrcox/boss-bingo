@@ -38,4 +38,4 @@ dist/
 
 # This should be provided by the end user
 words.json
-
+config.json
