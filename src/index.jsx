@@ -13,10 +13,16 @@ import reducer from './reducer';
 import App from './components/App';
 import { GameContainer } from './components/Game';
 
-const initialState = Map({
+import config from '../config.json';
+
+let initialState = Map({
   title: 'Boss Bingo',
   score: 0
 });
+
+if (config.public && config.public.title) {
+  initialState = initialState.set('title', config.public.title);
+}
 
 const store = createStore(reducer, initialState, compose(
   applyMiddleware(thunkMiddleware),
