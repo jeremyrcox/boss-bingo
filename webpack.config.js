@@ -32,6 +32,7 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  devtool: 'source-map',
   devServer: {
     contentBase: './dist',
     hot: true
@@ -48,7 +49,7 @@ module.exports = {
         screw_ie8: true
       },
       comments: false,
-      sourceMap: false
+      sourceMap: process.env.NODE_ENV !== 'production'
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin()
