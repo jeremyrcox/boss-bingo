@@ -1,0 +1,10 @@
+export const SOCKET_OPEN = 'SOCKET_OPEN';
+export const SOCKET_CLOSE = 'SOCKET_CLOSE';
+export const SOCKET_MESSAGE = 'SOCKET_MESSAGE';
+export const SOCKET_ERROR = 'SOCKET_ERROR';
+
+export const SET_STATE = 'SET_STATE';
+export const TOGGLE_SPACE = 'TOGGLE_SPACE';
+export const INVALIDATE_WORDS = 'INVALIDATE_WORDS';
+export const REQUEST_WORDS = 'REQUEST_WORDS';
+export const RECEIVE_WORDS = 'RECEIVE_WORDS';

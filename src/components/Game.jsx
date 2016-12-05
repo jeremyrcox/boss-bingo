@@ -17,6 +17,10 @@ export class Game extends React.Component {
     return this.props.title || 'BINGO';
   }
 
+  getPlayerCount() {
+    return this.props.players || 0;
+  }
+
   getWords() {
     return this.props.words || [];
   }
@@ -57,7 +61,7 @@ export class Game extends React.Component {
 
     return (
       <div>
-        <Heading title={this.getTitle()} />
+        <Heading title={this.getTitle()} players={this.getPlayerCount()} />
         <div className={`game-board ${this.isWinning() ? 'win' : ''}`}>
           <ul className="game">
             {this.getWords().map((word, index) =>
@@ -74,6 +78,7 @@ Game.propTypes = {
   words: React.PropTypes.object,
   score: React.PropTypes.number.isRequired,
   title: React.PropTypes.string,
+  players: React.PropTypes.number,
   isFetchingWords: React.PropTypes.bool
 };
 
@@ -82,6 +87,7 @@ function mapStateToProps(state) {
     words: state.get('words'),
     score: state.get('score'),
     title: state.get('title'),
+    players: state.get('players'),
     isFetchingWords: state.get('isFetchingWords')
   };
 }

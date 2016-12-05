@@ -10,6 +10,7 @@ import { Map } from 'immutable';
 
 import { fetchWordsIfNeeded } from './fetch-words';
 import reducer from './reducer';
+import dispatchSocketEvents from './socket-dispatch';
 import App from './components/App';
 import { GameContainer } from './components/Game';
 
@@ -32,6 +33,9 @@ const store = createStore(reducer, initialState, compose(
 store.dispatch(fetchWordsIfNeeded()).then(() =>
   console.log(store.getState()) // eslint-disable-line no-console
 );
+
+const websocket = new WebSocket(`ws://localhost:${config.port}/ws`);
+dispatchSocketEvents(websocket, store);
 
 const routes = (
   <Route component={App}>

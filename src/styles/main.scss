@@ -75,9 +75,19 @@ body {
 }
 
 .heading {
+  align-items: center;
   background: $light;
   border-bottom: 4px solid;
   color: $accent;
-  margin: 0;
+  display: flex;
   padding: 15px;
+  justify-content: space-between;
+
+  .player-count {
+    text-align: right;
+  }
+}
+
+h1 {
+  margin: 0;
 }
