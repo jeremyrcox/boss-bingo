@@ -9,7 +9,9 @@ export function Heading(props) {
       <h1>
         {title}
       </h1>
-      <div className="player-count">{players} other player{players === 1 ? '' : 's'}</div>
+      {players >= 0 ?
+        <div className="player-count">{players} other player{players === 1 ? '' : 's'}</div> : <div></div>
+      }
     </div>
   );
 }

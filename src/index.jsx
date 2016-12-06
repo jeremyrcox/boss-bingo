@@ -34,7 +34,7 @@ store.dispatch(fetchWordsIfNeeded()).then(() =>
   console.log(store.getState()) // eslint-disable-line no-console
 );
 
-const websocket = new WebSocket(`ws://localhost:${config.port}/ws`);
+const websocket = new WebSocket(`ws://${location.host}/ws`);
 dispatchSocketEvents(websocket, store);
 
 const routes = (
